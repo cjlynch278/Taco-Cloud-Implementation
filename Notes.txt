@@ -1,0 +1,1 @@
+Incorporating a the livereload server by installing the live reload extension to my chrome environment
