@@ -45,10 +45,17 @@
       <h3>Here's how I'll pay...</h3>
       <label for="ccNumber">Credit Card #: </label>
       <input type="text" th:field="*{ccNumber}"/>
+      <!--       <span class = "validationError"
+      		th:if= "${#fields.hasErrors('çcNumber')}"
+            th:errors="*{ccNumber}" > CC Number Error</span>  -->
+
       <br/>
 
       <label for="ccExpiration">Expiration: </label>
       <input type="text" th:field="*{ccExpiration}"/>
+      <!--       <span class = "validationError"
+      		th:if= "${#fields.hasErrors('ccExpiration')}"
+            th:errors="*{ccExpiration}" > CC Expiration Error/span> --> 
       <br/>
 
       <label for="ccCVV">CVV: </label>

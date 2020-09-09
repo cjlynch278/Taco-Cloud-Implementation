@@ -22,9 +22,16 @@ public class OrderController {
     model.addAttribute("order", new Order());
     return "orderForm";
   }
+  @GetMapping("/all")
+  public String allOrders(Model model) {
+	  return "allOrders";
+  }
   
   @PostMapping
-  public String processOrder(Order order) {
+  public String processOrder(@Valid Order order, Errors errors) {
+	  if(errors.hasErrors()) {
+		  return "orderForms";
+	  }
 	  log.info("Order submitted: "+ order);
 	  return "redirect:/";
   }
