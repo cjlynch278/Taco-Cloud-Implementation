@@ -1,1 +1,2 @@
 Incorporating a the livereload server by installing the live reload extension to my chrome environment
+Example of how to kill a port: fuser -k 8080/tcp

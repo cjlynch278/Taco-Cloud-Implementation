@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th="http//www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Taco Cloud</title>
+</head>
+<body style="text-align: center;">
+<img th:src="@{/images/TacoCloud.png}"/>
+
+<form method="POST" th:action="@{/submitNewIngredient}">
+    <label for="ingname">Ingredient Name</label><br>
+    <input type="text" id="ingname" name="ingInput"><br>
+    <label for="ingId">Input 4 letter ID</label><br>
+    <input type="text" id="ingId" name="idInput">
+    <br>
+    <input type="radio" id="wrap" name="ingType" value="wrap">
+    <label for="wrap">Wrap</label><br>
+    <input type="radio" id="protein" name="ingType" value="protein">
+    <label for="protein">Protein</label><br>
+    <input type="radio" id="veggies" name="ingType" value="veggies">
+    <label for="veggies">Veggies</label><br>
+    <input type="radio" id="cheese" name="ingType" value="cheese">
+    <label for="cheese">Cheese</label><br>
+    <input type="radio" id="sauce" name="ingType" value="sauce">
+    <label for="sauce">Sauce</label>
+    <br>
+
+    <input type="Submit">
+</form>
+</body>
+</html>
