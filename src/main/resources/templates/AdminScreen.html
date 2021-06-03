@@ -8,7 +8,7 @@
 <body style="text-align: center;">
 <img th:src="@{/images/TacoCloud.png}"/>
 
-<form method="POST" th:action="@{/submitNewIngredient}">
+<form method="POST" th:object="${admin}">
     <label for="ingname">Ingredient Name</label><br>
     <input type="text" id="ingname" name="ingInput"><br>
     <label for="ingId">Input 4 letter ID</label><br>
@@ -24,6 +24,42 @@
     <label for="cheese">Cheese</label><br>
     <input type="radio" id="sauce" name="ingType" value="sauce">
     <label for="sauce">Sauce</label>
+    <br>
+    <div class="ingredient-group" id="wraps">
+        <h3>Designate your wrap:</h3>
+        <div th:each="ingredient : ${wrap}">
+            <input name="ingredients" type="checkbox" th:value="${ingredient.id}"
+            />
+            <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+        </div>
+    </div>
+
+    <div class="ingredient-group" id="proteins">
+        <h3>Pick your protein:</h3>
+        <div th:each="ingredient : ${protein}">
+            <input name="ingredients" type="checkbox" th:value="${ingredient.id}"
+            />
+            <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+        </div>
+    </div>
+
+    <div class="ingredient-group" id="cheeses">
+
+    <h1>Tacos: </h1>
+        <div th:each="ingredient : ${wrap}">
+            <input name="ingredients" type="checkbox" th:value="${ingredient.id}"
+            />
+            <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+        </div>
+    <span th:text="${RandomID}">INGREDIENT</span><br/>
+
+    <div th:each="ingredient : ${ingredient}">
+        <h1>Following: </h1>
+        <input name="ingredients" type="checkbox" th:value="${ingredient.id}"
+        />
+
+        <span th:text="${ingredient.name}">INGREDIENT</span><br/>
+    </div>
     <br>
 
     <input type="Submit">
